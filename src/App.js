@@ -12,6 +12,8 @@ const [productos, setProductos] = useState([
   {id:4, nombre:"Calcetines", precio: 6},
 ]);
 
+const [ carrito, agregarProducto  ] = useState([]);
+
 const fecha = new Date().getFullYear();
 
   return (
@@ -24,8 +26,11 @@ const fecha = new Date().getFullYear();
       <h1>Listado de productos</h1>
       {productos.map(producto =>(
         <Producto 
-          key = {producto.id} 
-          producto = {producto}
+          key={producto.id} 
+          producto={producto}
+          carrito={carrito}
+          productos={productos}
+          agregarProducto={agregarProducto}
         />
       ))}
 
